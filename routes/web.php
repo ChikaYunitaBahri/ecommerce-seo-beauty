@@ -34,11 +34,6 @@ use App\Http\Controllers\TokoController;
         Route::resource('products', ProductController::class);
         Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products.index');
     });
-
-    Route::middleware(['auth','role:user'])->group(function () {
-        Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show'); //view detail produk user
-        Route::get('/products', [ProductController::class, 'index'])->name('products.index'); //halaman produk user
-    });
    
     //menampilkan crud cart user
     Route::middleware(['auth'])->group(function () {
@@ -50,9 +45,10 @@ use App\Http\Controllers\TokoController;
         Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
     });
 
+    //ntuk user
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show'); //view detail produk user
+        Route::get('/products', [ProductController::class, 'index'])->name('products.index'); //halaman produk user
+    });
 
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Cart; // Import model Cart
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +24,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    //public function index()
+    //{
+    //   return view('home');
+    //}
+
     public function index()
     {
-        return view('home');
+        $products = Product::all(); // Mengambil semua produk
+        $cartItems = [];
+
+        if (Auth::check()) {
+            $cartItems = Cart::where('user_id', Auth::id())->with('product')->get();
+        }
+
+        return view('home', compact('products', 'cartItems'));
     }
 }
