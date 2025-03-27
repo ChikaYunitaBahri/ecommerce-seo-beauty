@@ -13,7 +13,7 @@
     {{-- Jika Admin, tampilkan TABEL CRUD --}}
     @if(Auth::user()->hasRole('admin'))
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="mb-3 text-primary">Products (Admin View)</h2>
+            <h2 class="mb-3 text-primary">Manage Product</h2>
             <a href="{{ route('products.create') }}" class="btn btn-primary ms-auto">Add Product</a>
         </div>
 
