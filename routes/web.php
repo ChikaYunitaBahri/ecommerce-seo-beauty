@@ -45,7 +45,7 @@ use App\Http\Controllers\TokoController;
         Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
     });
 
-    //ntuk user
+    //untuk user
     Route::middleware(['auth'])->group(function () {
         Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show'); //view detail produk user
         Route::get('/products', [ProductController::class, 'index'])->name('products.index'); //halaman produk user
