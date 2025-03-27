@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Edit Product</h2>
+    <h2 class="mb-3 text-primary">Edit Product</h2>
     <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -21,7 +21,7 @@
             <input type="number" name="price" class="form-control" value="{{ $product->price }}" required>
         </div>
         <br>
-        <button type="submit" class="btn btn-success">Update Product</button>
+        <button type="submit" class="btn btn-warning">Update Product</button>
     </form>
 </div>
 @endsection

@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <h2 class="fw-bold">{{ $product->name }}</h2>
             <p class="text-muted">{{ $product->description }}</p>
-            <h4 class="text-success">Price: Rp{{ number_format($product->price, 0, ',', '.') }}</h4>
+            <h4 class="text-primary">Price: Rp{{ number_format($product->price, 0, ',', '.') }}</h4>
 
             <form action="{{ route('cart.add') }}" method="POST" class="mt-3">
                 <input type="hidden" name="product_id" value="{{ $product->id }}">

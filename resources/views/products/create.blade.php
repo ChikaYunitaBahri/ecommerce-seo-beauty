@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Add Product</h2>
+    <h2 class="mb-3 text-primary">Add Product</h2>
     <form action="{{ route('products.store') }}" method="POST">
         @csrf
         <div class="form-group">
@@ -20,7 +20,7 @@
             <input type="number" name="price" class="form-control" required>
         </div>
         <br>
-        <button type="submit" class="btn btn-success">Add Product</button>
+        <button type="submit" class="btn btn-primary">Add Product</button>
     </form>
 </div>
 @endsection
