@@ -269,7 +269,7 @@
 /* Card Feature (untuk fitur 100% Original, Free Shipping, Customer Support) */
 .feature-card {
     background: #ffffff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #007bff;
     border-radius: 0.5rem;
 }
 .feature-card .card-body {
