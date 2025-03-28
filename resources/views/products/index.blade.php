@@ -49,7 +49,7 @@
 
     {{-- Jika User, tampilkan CARD PRODUK dengan tombol Add to Cart --}}
     @elseif(Auth::user()->hasRole('user'))
-        <h2 class="mb-3 text-primary">Product</h2>
+        <h2 class="mb-3 text-primary">Our Product</h2>
         <div class="row">
             @foreach($products as $product)
                 <div class="col-md-4 mb-4">
