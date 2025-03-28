@@ -56,7 +56,7 @@ class CartController extends Controller
         $cartItem = Cart::where('user_id', Auth::id())->where('id', $id)->firstOrFail();
         $cartItem->delete();
 
-        return redirect()->route('cart.index')->with('success', 'Item removed from cart.');
+        return redirect()->route('cart.index')->with('success', 'Product removed from cart.');
     }
 
     public function clearCart()
