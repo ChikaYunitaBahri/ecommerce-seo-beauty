@@ -1,5 +1,3 @@
-login.blade.php
-
 
 @extends('layouts.app')
 

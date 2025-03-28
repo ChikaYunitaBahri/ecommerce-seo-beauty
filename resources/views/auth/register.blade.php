@@ -71,7 +71,7 @@
             </form>
 
             <div class="text-center mt-3">
-                <small>Sudah punya akun?
+                <small>Already have an account? 
                     <a href="{{ route('login') }}" class="text-decoration-none">Login</a>
                 </small>
             </div>
